@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/vist_location.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="js/vist_location.js">
+</head>
+<body>
+    <div class="header">
+        <ul class="flex-container">
+            <li><a href="booking.html" class="title styled_text">Booking.com</a></li>
+            <li><button class="styled_text choose_currency" id="currency" onclick="choose_currency()">VND</button></li>
+            <li><button class="icon_flag-vn" id="flag" onclick="choose_language()"><img class="icon_flag-vn" src="img/Vn@3x.png" alt=""></button></li>
+            <li class="https://secure.booking.com/help"><button class="icon-question styled_text ">?</button></li>
+            <li><a href="https://account.booking.com/sign-in?" class="styled_button">Đăng ký</a></li>
+            <li><a href="https://account.booking.com/sign-in?" class="styled_button">Đăng nhập</a></li>
+        </ul>
+        <div class="flex-container">
+            <div class="wrapper-hover flex-container">
+                <a href="booking.html"><img class="resize-form" src="img/bed-title.png" alt=""></a>
+                <a href="booking.html" class="styled_text">Lưu trú</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_flight.html"><img class="resize-form" src="img/airplane.jpg" alt=""></a>
+                <a href="booking_flight.html" class="styled_text">Chuyến bay</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_and_hotel.html"><img class="resize-form" src="img/2023-09-04_182311.jpg" alt=""></a>
+                <a href="booking_and_hotel.html" class="styled_text">Chuyến bay + Khách sạn</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="rent-car.html"><img class="resize-form" src="img/car.jpg" alt=""></a>
+                <a href="rent-car.html" class="styled_text">Thuê xe</a>
+            </div>
+            <div class="wrapper-hover flex-container white-border">
+                <a href=""><img class="resize-form" src="img/location-title.png" alt=""></a>
+                <a href="" class="styled_text">Địa điểm tham quan</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="Airport_taxi.html"><img class="resize-form" src="img/taxi.jpg" alt=""></a>
+                <a href="Airport_taxi.html" class="styled_text">Taxi sân bay</a>
+            </div>
+        </div>
+        <p class="big_text-size">Địa điểm tham quan, hoạt động và trải nghiệm</p>
+        <p class="medium_text-size">Khám phá các hoạt động và địa điểm tham quan mới theo sở thích và gu du lịch của bạn</p>
+    </div>
+    <div class="container">
+        <div class="search_wrapper flex-container">
+            <div class="search_form flex-container">
+                <input type="text" name="" id="" placeholder="Bạn muốn đi đâu?" class="styled_text txt_text">
+            </div>
+            <div class="search_form flex-container">
+                <button class="styled_button" onclick="pick_date()"><img src="img/calendar-white.png" alt="" class="resize-form"></button>
+                <button class="styled_text" id="date_text" onclick="pick_date()">Chọn ngày</button>
+                <input type="date" name="" id="date_table" style="display: none; border-style: none;">
+            </div>
+            <button class="color-button" onclick="find_local()">Tìm</button>
+        </div>
+        <div class="nearby_locations">
+            <h3>Điểm đến lân cận</h3>
+            <div class="sub_small-form">
+                <div class="img_caption">
+                    <a href=""><img src="img/hue.png" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">Huế</a> 
+                        <p>51 hoạt động</p>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/hochiminh.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">TP. Hồ Chí Minh</a>
+                        <p>232 hoạt động</p>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/hanoi.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">Hà Nội</a> 
+                        <p>213 hoạt động</p>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/danang.png" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">Đà Nẵng</a> 
+                        <p>328 hoạt động</p>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/hoian.png" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">Hội An</a> 
+                        <p>328 hoạt động</p>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/nhatrang.png" alt="" class="resize-form"></a>
+                    <div class="styled_text">
+                        <a href="">Nha Trang</a> 
+                        <p>34 hoạt động</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-form">
+            <h4>Đăng nhập để tiết kiệm thời gian</h4>
+            <p>Tài khoản Booking.com của bạn cho phép đặt chỗ bằng thông tin đã lưu của bạn</p>
+            <a href="booking.html">Đăng nhập</a>
+        </div>
+        <div class="sub-ads">
+            <h3>Bạn cứ vô tư khám phá, những thứ khác chúng tôi lo</h3>
+            <div class="content-wrapper flex-container">
+                <div class="sub-form">
+                    <img src="img/location-green.png" alt="" class="resize-form">
+                    <div>
+                        <h4>Khám phá các địa điểm tham quan hàng đầu</h4>
+                        <p>Trải nghiệm những điều tuyệt vời nhất tại điểm đến với các địa điểm tham quan, tour và nhiều hoạt động khác</p>
+                    </div>
+                </div>
+                <div class="sub-form">
+                    <img src="img/calendar-green.png" alt="" class="resize-form">
+                    <div>
+                        <h4>Nhanh chóng và linh hoạt</h4>
+                        <p>Đặt vé online trong vài phút với lựa chọn hủy miễn phí ở nhiều địa điểm quan tham</p>
+                    </div>
+                </div>
+                <div class="sub-form">
+                    <img src="img/help-green.png" alt="" class="resize-form">
+                    <div>
+                        <h4>Được trợ giúp khi bạn cần</h4>
+                        <p>Đội ngũ Dịch vụ Khách hàng toàn cầu của Booking.com sẽ luôn có mặt để hỗ trợ bạn 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="other_locations">
+            <h3>Khám phá thêm nhiều điểm đến khác</h3>
+            <p>Tìm địa điểm tham quan tại các thành phố trên thế giới</p>
+            <ul class="list-location">
+                <li><button class="1" onclick="showContent(this)">Châu Âu</button></li>
+                <li><button class="2" onclick="showContent(this)">Bắc Mỹ</button></li>
+                <li><button class="3" onclick="showContent(this)">Châu Á</button></li>
+                <li><button class="4" onclick="showContent(this)">Châu Phi</button></li>
+                <li><button class="5" onclick="showContent(this)">Châu Đại Dương</button></li>
+                <li><button class="6" onclick="showContent(this)">Trung Đông</button></li>
+                <li><button class="7" onclick="showContent(this)">Nam Mỹ</button></li>
+                <li><button class="8" onclick="showContent(this)">Vùng Caribe</button></li>
+                <li><button class="9" onclick="showContent(this)">Trung Mỹ</button></li>
+            </ul>
+            <div class="content-locations">
+                <div id="content1" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div id="content2" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content3" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content4" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/london (2).png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">London</a> 
+                                <p>680 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/istanbul.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Istanbul</a>
+                                <p>215 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/paris.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Paris</a> 
+                                <p>690 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content5" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/harmburg.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Hamburg</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/amsterdam.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Amsterdam</a> 
+                                <p>368 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content6" class="show-content">
+                    <div class="sub_small-form">
+                    
+                        <div class="img_caption">
+                            <a href=""><img src="img/lisboa.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Lisboa</a> 
+                                <p>425 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/roma.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Roma</a> 
+                                <p>901 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/athens.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Athens</a> 
+                                <p>268 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/berlin.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Berlin</a> 
+                                <p>320 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/barcelona.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Barcelona</a> 
+                                <p>583 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/venice.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Venice</a> 
+                                <p>297 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/malaga.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Málaga</a> 
+                                <p>149 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/stockholm.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Stockholm</a> 
+                                <p>122 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/monte carlo.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Monte Carlo</a> 
+                                <p>6 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/marid.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Madrid</a> 
+                                <p>374 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/armacao.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Armacao de Pêra</a> 
+                                <p>256 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/seville.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Sevilaa</a> 
+                                <p>216 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/krakow.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Krakow</a> 
+                                <p>167 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content7" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/napoli.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Napoli</a> 
+                                <p>363 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/cordoba.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Cordoba</a> 
+                                <p>71 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/milano.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Milano</a> 
+                                <p>198 hoạt động</p>
+                            </div>
+                        </div>                
+                        <div class="img_caption">
+                            <a href=""><img src="img/Faro.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Faro</a> 
+                                <p>139 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content8" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/wien.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Wien</a> 
+                                <p>214 hoạt động</p>
+                            </div>
+                        </div>
+                        <div class="img_caption">
+                            <a href=""><img src="img/porto.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Porto</a> 
+                                <p>175 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content9" class="show-content">
+                    <div class="sub_small-form">
+                        <div class="img_caption">
+                            <a href=""><img src="img/panama.png" alt="" class="resize-form"></a>
+                            <div class="styled_text">
+                                <a href="">Panama</a> 
+                                <p>40 hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="others">
+            <div class="block">
+                <h4>Hỗ trợ</h4>
+                <a href="">Các câu hỏi thường gặp về virus corona (COVID-19)</a> 
+                <a href="">Quản lí các chuyến đi của bạn</a> 
+                <a href="">Trung tâm trợ giúp điểm tham quan</a> 
+                <a href="">Trung tâm thông tin bảo mật</a>
+            </div>
+            <div class="block">
+                <h4>Khám phá thêm</h4>
+                <a href="">Chương trình khách hàng thân thiết Genius</a>
+                <a href="">Ưu đãi theo mùa và dịp lễ</a>
+                <a href="">Bài viết về du lịch</a>
+                <a href="">Booking.com dành cho Doanh Nghiệp</a>
+            </div>
+            <div class="block">
+                <h4>Điều khoản và cài đặt</h4>
+                <a href="">Bảo mật & Cookie</a>
+                <a href="">Điều khoản và điều kiện</a>
+                <a href="">Tranh chấp đối tác</a>
+                <a href="">Chính sách MSA</a>
+            </div>
+            <div class="block">
+                <h4>Dành cho đối tác</h4>
+                <a href="">Đăng nhập vào trang Extranet</a>
+                <a href="">Trợ giúp đối tác</a>
+                <a href="">Đăng chỗ nghỉ của Quý vị</a>
+                <a href="">Trở thành đối tác phân phối</a>
+            </div>
+            <div class="block">
+                <h4>Về chúng tôi</h4>
+                <a href="">Về Booking.com</a>
+                <a href="">Chúng tôi hoạt động như thế nào</a>
+                <a href="">Du lịch bền vững</a>
+                <a href="">Truyền thông</a>
+                <a href="">Cơ hội việc làm</a>
+                <a href="">Quan hệ cổ đông</a>
+                <a href="">Liên hệ công ty</a>
+            </div>
+        </div>
+        <div class="choose-type">
+            <button id="language_footer" onclick="choose_language()"><img src="img/Vn@3x.png" alt="" class="resize-form"></button>
+            <button id="currency_footer" onclick="choose_currency()">VND</button>
+        </div>
+        <div class="footer_priceline-title">
+            <p>Booking.com là một phần của Booking Holdings Inc., tập đoàn đứng đầu thế giới về du lịch trực tuyến và các dịch vụ liên quan.</p>
+            <p>Bản quyền © 1996–2023 Booking.com™. Bảo lưu mọi quyền.</p>
+        </div>
+        <div class="footer_priceline-list">
+            <img src="img/vist_location-title.png" alt="" title="">
+        </div>
+    </div>
+    <div class="modals">
+        <div id="change_currency-content" class="change_currency-wrapper">
+            <div class="form">
+                <i class="fa-solid fa-x" onclick="close_table()"></i>
+                <h3>Chọn loại tiền tệ của bạn</h3>
+                <p>Trong trường hợp có thể áp dụng, giá sẽ được quy đổi và hiển thị theo loại tiền tệ mà bạn chọn. Có thể bạn sẽ thanh toán bằng loại tiền tệ khác tùy vào chỗ nghỉ bạn đặt và phí dịch vụ cũng có thể được áp dụng.</p>
+                <h4>Được đề xuất cho bạn</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <span>Đô la Mỹ</span> <br>
+                        <span>USD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Euro</span> <br>
+                        <span>EUR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Won Hàn Quốc</span> <br>
+                        <span>KRW</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Úc</span> <br>
+                        <span>AUD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Singapore</span> <br>
+                        <span>SGD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Yên Nhật</span> <br>
+                        <span>JPY</span>
+                    </button>
+                </div>
+                <h4>Tất cả loại tiền tệ</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <span>Đồng Việt Nam</span> <br>
+                        <span>VND</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Tiền tệ của chỗ nghỉ</span> <br>
+                        <span>€$£</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bạt Thái</span> <br>
+                        <span>THB</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bảng Ai Cập</span> <br>
+                        <span>AUD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bảng Anh</span> <br>
+                        <span>GBP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Bahrain</span> <br>
+                        <span>BHD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Jordan</span> <br>
+                        <span>JOD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Kuwait</span> <br>
+                        <span>KWD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dirham UAE</span> <br>
+                        <span>AED</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Euro</span> <br>
+                        <span>EUR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Forint</span> <br>
+                        <span>HUF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Franc CFA Tây Phi</span> <br>
+                        <span>XOF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Franc Thụy Sỹ</span> <br>
+                        <span>CHF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Hryvnia Ukraine</span> <br>
+                        <span>UAH</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Koruna Séc</span> <br>
+                        <span>CZK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krona Thụy Điển</span> <br>
+                        <span>SEK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krone Na Uy</span> <br>
+                        <span>NOK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krone Đan Mạch</span> <br>
+                        <span>DKK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lari</span> <br>
+                        <span>GEL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Leu Moldova</span> <br>
+                        <span>MDL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Leu mới Romania</span> <br>
+                        <span>RON</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lev</span> <br>
+                        <span>BGN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lira Thổ Nhĩ Kỳ</span> <br>
+                        <span>TRY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Manat Azerbaijan cũ</span> <br>
+                        <span>AZN</span>
+                    </button><button class="sub-form">
+                        <span>Nhân dân tệ</span> <br>
+                        <span>CNY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Argentina</span> <br>
+                        <span>ARS</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Chile</span> <br>
+                        <span>CLP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Colombia</span> <br>
+                        <span>COP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Mexico</span> <br>
+                        <span>MXN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rand Nam Phi</span> <br>
+                        <span>ZAR</span>
+                    </button><button class="sub-form">
+                        <span>Real Brazil</span> <br>
+                        <span>BRL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rial Oman</span> <br>
+                        <span>OMR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Ringgit Malaysia</span> <br>
+                        <span>MYR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Riyal Qatar</span> <br>
+                        <span>QAR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Riyal Ả Rập Xê Út</span> <br>
+                        <span>SAR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rupee Ấn Độ</span> <br>
+                        <span>INR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rupiah</span> <br>
+                        <span>IDR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rúp Nga</span> <br>
+                        <span>RUB</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Sheqel Israel mới</span> <br>
+                        <span>ILS</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Tenge Kazakhstan</span> <br>
+                        <span>KZT</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Won Hàn Quốc</span> <br>
+                        <span>KRW</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Yên Nhật</span> <br>
+                        <span>JPY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Zloty Ba Lan</span> <br>
+                        <span>PLN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Canada</span> <br>
+                        <span>CAD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Fiji</span> <br>
+                        <span>FJD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Hong Kong</span> <br>
+                        <span>HKD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Mỹ</span> <br>
+                        <span>USD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Namibia</span> <br>
+                        <span>NAD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la New Zealand</span> <br>
+                        <span>NZD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Singapore</span> <br>
+                        <span>SGD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Úc</span> <br>
+                        <span>AUD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Đài Loan mới</span> <br>
+                        <span>TWD</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="change_language-content" class="change_currency-wrapper">
+            <div class="form">
+                <i class="fa-solid fa-x" onclick="close_table()"></i>
+
+                <h3>Chọn ngôn ngữ của bạn</h3>
+                
+                <h4>Được đề xuất cho bạn</h4>
+                <div class="language-wrapper">
+                    <button class="sub-form">
+                        <img src="img/Gb@3x.png" alt="">
+                        <span>English (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Us@3x.png" alt="">
+                        <span>English (US)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Kr@3x.png" alt="">
+                        <span>한국어</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fr@3x.png" alt="">
+                        <span>Français</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/De@3x.png" alt="">
+                        <span>Deutsch</span>
+                    </button>
+                </div>
+                <h4>Tất cả ngôn ngữ</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <img src="img/Gb@3x.png" alt="">
+                        <span>English (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Us@3x.png" alt="">
+                        <span>English (US)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/De@3x.png" alt="">
+                        <span>Deutsch</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/No@3x.png" alt="">
+                        <span>Nederlands  (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fr@3x.png" alt="">
+                        <span>Français  (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Es@3x.png" alt="">
+                        <span>Español</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Ar@3x.png" alt="">
+                        <span>Español (AR)   (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Mx@3x.png" alt="">
+                        <span>Español (MX)  (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Catalonia@3x.png" alt="">
+                        <span>Català  (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Lt@3x.png" alt="">
+                        <span>Italiano</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Pt@3x.png" alt="">
+                        <span>Português (PT) </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Br@3x.png" alt="">
+                        <span>Português (BR)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/No@3x.png" alt="">
+                        <span>Norsk </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fi@3x.png" alt="">
+                        <span>Suomi </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Se@3x.png" alt="">
+                        <span>Svenska </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Dk@3x.png" alt="">
+                        <span>Dansk </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ro@3x.png" alt="">
+                        <span>Čeština </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Hu@3x.png" alt="">
+                        <span>Magyar  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ro@3x.png" alt="">
+                        <span>Română</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Jp@3x.png" alt="">
+                        <span>日本語</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Cn@3x.png" alt="">
+                        <span>简体中文</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Cz@3x.png" alt="">
+                        <span>Čeština</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Z4@3x.png" alt="">
+                        <span>繁體中文</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Pl@3x.png" alt="">
+                        <span>Polski</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Gr@3x.png" alt="">
+                        <span>Ελληνικά  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ru@3x.png" alt="">
+                        <span>Русский  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Tr@3x.png" alt="">
+                        <span>Türkçe  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Bg@3x.png" alt="">
+                        <span>Български  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Sa@3x.png" alt="">
+                        <span>العربية  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Kr@3x.png" alt="">
+                        <span>한국어</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Bg@3x.png" alt="">
+                        <span>עברית </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Lv@3x.png" alt="">
+                        <span>Latviski </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ua@3x.png" alt="">
+                        <span>Українська </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/In@3x.png" alt="">
+                        <span>हिन्दी </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Id@3x.png" alt="">
+                        <span>Bahasa Indonesia  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Es@3x.png" alt="">
+                        <span>Bahasa Malaysia </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Th@3x.png" alt="">
+                        <span>ภาษาไทย </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ee@3x.png" alt="">
+                        <span>Eesti </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Hr@3x.png" alt="">
+                        <span>Hrvatski </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Lt@3x.png" alt="">
+                        <span>Lietuvių  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Sk@3x.png" alt="">
+                        <span>Slovenčina  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Hr@3x.png" alt="">
+                        <span>Srpski  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Vn@3x.png" alt="">
+                        <span>Tiếng Việt   </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Ph@3x.png" alt="">
+                        <span>Filipino  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Is@3x.png" alt="">
+                        <span>Íslenska </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Si@3x.png" alt="">
+                        <span>Hrvatski </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/vist_location.js"></script>
+</body>
+</html>

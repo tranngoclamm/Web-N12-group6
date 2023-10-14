@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Airport_taxi.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="js/Airport_taxi.js">
+</head>
+<body>
+    <div class="header">
+        <ul class="flex-container">
+            <li><a href="booking.html" class="title styled_text">Booking.com</a></li>
+            <li><button class="styled_text choose_currency">VND</button></li>
+            <li><button class="icon_flag-vn" ><img class="icon_flag-vn" src="img/flag-vn.png" alt=""></button></li>
+            <li class=""><button class="wrapper_hover icon-question styled_text ">?</button></li>
+            <li><a href="" class="styled_text join-booking wrapper_hover">Đăng chỗ nghỉ của Quý vị</a></li>
+            <li><a href="" class="styled_button">Đăng ký</a></li>
+            <li><a href="" class="styled_button">Đăng nhập</a></li>
+        </ul>
+        <div class="flex-container">
+            <div class="wrapper-hover flex-container">
+                <a href="booking.html"><img class="resize-form" src="img/bed-title.png" alt=""></a>
+                <a href="booking.html" class="styled_text">Lưu trú</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_flight.html"><img class="resize-form" src="img/airplane.jpg" alt=""></a>
+                <a href="booking_flight.html" class="styled_text">Chuyến bay</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_and_hotel.html"><img class="resize-form" src="img/2023-09-04_182311.jpg" alt=""></a>
+                <a href="booking_and_hotel.html" class="styled_text">Chuyến bay + Khách sạn</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="rent-car.html"><img class="resize-form" src="img/car.jpg" alt=""></a>
+                <a href="rent-car.html" class="styled_text">Thuê xe</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="vist_location.html"><img class="resize-form" src="img/location.jpg" alt=""></a>
+                <a href="vist_location.html" class="styled_text">Địa điểm tham quan</a>
+            </div>
+            <div class="wrapper-hover flex-container white-border">
+                <a href="Airport_taxi.html"><img class="resize-form" src="img/taxi-icon.png" alt=""></a>
+                <a href="Airport_taxi.html" class="styled_text">Taxi sân bay</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container grey-background">
+        <h2>Đặt taxi sân bay</h2>
+        <p>Dịch vụ đưa đóng sân bay tiện lợi và từ chỗ nghỉ</p>
+        <div class="sub-content">
+            <div class="sub-block">
+                <img src="img/airplane-gr.png" alt="">
+                <div>
+                    <h5>Theo dõi chuyến bay</h5>
+                    <p>Tài xế vẫn sẽ theo dõi và đợi bạn dù chuyến bay có trễ</p>
+                </div>
+            </div>
+            <div class="sub-block">
+                <img src="img/price-gr.png" alt="">
+                <div>
+                    <h5>Một giá rõ ràng</h5>
+                    <p>Giá của bạn được xác nhận trước – không phụ phí, không tiền mặt</p>
+                </div>
+            </div>
+            <div class="sub-block">
+                <img src="img/trust-gr.png" alt="">
+                <div>
+                    <h5>Được tin dùng</h5>
+                    <p>Chúng tôi hợp tác với các tài xế chuyên nghiệp và có cung cấp chăm sóc khách hàng 24/7</p>
+                </div>
+            </div>
+        </div>
+        <div class="operation_process">
+            <h1>Đưa đón sân bay thật tiện lợi</h1>
+            <div class="content_wrapper">
+                <div class="left-block">
+                    <div class="sub-block">
+                        <img src="img/airport-taxi.png" alt="">
+                        <div>
+                            <h4>Đặt taxi sân bay</h4>
+                            <p>Xác nhận tức thì. Nếu kế hoạch thay đổi, bạn có thể hủy miễn phí đến 24 giờ trước giờ đón</p>
+                        </div>
+                    </div>
+                    <div class="sub-block">
+                        <img src="img/meet_taxi.png" alt="">
+                        <div>
+                            <h4>
+                                Gặp tài xế</h4>
+                                <p>Bạn sẽ gặp tài xế ở ga đến và được đưa ra xe. Tài xế sẽ theo dõi chuyến bay và đợi bạn kể cả khi chuyến bay bị trễ</p>
+                        </div>
+                    </div>
+                    <div class="sub-block">
+                        <img src="img/coming_to.png" alt="">
+                        <div>
+                            <h4>Tới điểm đến</h4>
+                            <p>Tới điểm đến của bạn nhanh và an toàn – không cần xếp hàng chờ taxi, không cần tìm kiếm phương tiện công cộng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block">
+                    <img src="img/operation_process.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="choose_type-taxi">
+            <h2>Taxi sân bay cho bất kỳ chuyến đi nào</h2>
+            <div class="choose_type">
+                <button onclick= "showContent(this)" class="small-type">1 - 3 khách</button>
+                <button onclick= "showContent(this)" class="medium-type">4 - 7 khách</button>
+                <button onclick= "showContent(this)" class="all-type">Tất cả các taxi</button>
+            </div>
+            <div class="content_type">
+                <div id="content_for-small-type" class="show_type flex-container">
+                    <div class="normal-type">
+                        <h5>Hạng chuẩn</h5>
+                        <p>Skoda Octavia hoặc tương tự</p>
+                        <div class="flex-container">
+                            <img src="img/passenger-icon.png" alt="">
+                            <p>3 hành khách</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/suicase-icon.png" alt="">
+                            <p>2 hành lý tiêu chuẩn</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/check-icon.png" alt="">
+                            <p>Bao gồm dịch vụ chào đón</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/done-icon.png" alt="">
+                            <p>Miễn phí hủy</p>
+                        </div>
+                        <button class="find-button">Tìm</button>
+                    </div>
+                    <div class="business-type">
+                        <h5>Hạng sang</h5>
+                        <p>Mercedes-Benz E-Class hoặc tương tự</p>
+                        <div class="flex-container">
+                            <img src="img/passenger-icon.png" alt="">
+                            <p>3 hành khách</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/suicase-icon.png" alt="">
+                            <p>2 hành lý tiêu chuẩn</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/check-icon.png" alt="">
+                            <p>Bao gồm dịch vụ chào đón</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/done-icon.png" alt="">
+                            <p>Miễn phí hủy</p>
+                        </div>
+                        <button class="find-button">Tìm</button>
+                    </div>
+                </div>
+                <div id="content_for-medium-type" class="show_type flex-container">
+                    <div class="normal-type">
+                        <h5>Minivan</h5>
+                        <p>Peugeot 5008 hoặc tương tự</p>
+                        <div class="flex-container">
+                            <img src="img/passenger-icon.png" alt="">
+                            <p>5 hành khách</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/suicase-icon.png" alt="">
+                            <p>5 hành lý tiêu chuẩn</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/check-icon.png" alt="">
+                            <p>Bao gồm dịch vụ chào đón</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/done-icon.png" alt="">
+                            <p>Miễn phí hủy</p>
+                        </div>
+                        <button class="find-button">Tìm</button>
+                    </div>
+                    <div class="business-type">
+                        <h5>Minivan hạng sang</h5>
+                        <p>Mercedes-Benz V-Class hoặc tương tự</p>
+                        <div class="flex-container">
+                            <img src="img/passenger-icon.png" alt="">
+                            <p>6 hành khách</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/suicase-icon.png" alt="">
+                            <p>6 hành lý tiêu chuẩn</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/check-icon.png" alt="">
+                            <p>Bao gồm dịch vụ chào đón</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/done-icon.png" alt="">
+                            <p>Miễn phí hủy</p>
+                        </div>
+                        <button class="find-button">Tìm</button>
+                    </div>
+                    <div class="big-type">
+                        <h5>Minivan lớn</h5>
+                        <p>Ford Tourneo hoặc tương tự hoặc tương tự</p>
+                        <div class="flex-container">
+                            <img src="img/passenger-icon.png" alt="">
+                            <p>7 hành khách</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/suicase-icon.png" alt="">
+                            <p>7 hành lý tiêu chuẩn</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/check-icon.png" alt="">
+                            <p>Bao gồm dịch vụ chào đón</p>
+                        </div>
+                        <div class="flex-container">
+                            <img src="img/done-icon.png" alt="">
+                            <p>Miễn phí hủy</p>
+                        </div>
+                        <button class="find-button">Tìm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popular-questions">
+            <div class="more_for-service">
+                <h2>Tìm hiểu thêm về dịch vụ taxi sân bay của chúng tôi</h2>
+                <p>Xem thêm các câu hỏi thường gặp trên <a href="">trang trợ giúp</a></p>
+            </div>
+            <div class="list-question">
+                <div class="question">
+                    <span class="question-text">
+                        Nếu chuyến bay của tôi đến sớm hoặc bị hoãn thì sao?
+                        <i class="fa-solid fa-angle-right"></i></span>
+                    <ul class="answer">
+                        <p>Dịch vụ Meet & Greet của chúng tôi bao gồm việc chúng tôi sẽ theo dõi chuyến bay và tự điều chỉnh thời điểm đón dựa vào giờ đến thực tế của bạn bằng hiệu số chuyến bay mà bạn cung cấp khi đặt taxi sân bay. Sau khi máy bay hạ cánh, tài xế sẽ chờ bạn 45 phút. Khoảng thời gian này đủ để bạn hoàn tất các thủ tục hải quan, nhận hành lý và đến cổng gặp tài xế của mình.</p>
+                    </ul>
+                </div>
+                <div class="question">
+                    <span class="question-text">
+                        Giá đã bao gồm những gì?
+                        <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                    <ul class="answer">
+                        <p>Giá của chúng tôi bao gồm tất cả các loại thuế, phí, tiền tip và phí đường bộ. Nếu bạn đặt dịch vụ đón tại sân bay, giá cũng bao gồm gói Meet & Greet tiêu chuẩn, bao gồm việc chúng tôi sẽ theo dõi chuyến bay và chờ bạn 45 phút kể từ thời điểm máy bay hạ cánh. Nếu bạn đặt một chuyến taxi khứ hồi đến sân bay - hoặc bất kỳ dịch vụ đón khách nào khác ngoài đưa đón sân bay - tài xế của bạn sẽ đợi 15 phút kể từ giờ đón đã đặt. Xin lưu ý, bạn có thể phải trả thêm chi phí cho một số yêu cầu đặc biệt hoặc cho bất kỳ thay đổi nào trong hành trình của mình.</p>
+                    </ul>
+                </div>
+                <div class="question">
+                    <span class="question-text">
+                        Tôi thanh toán bằng cách nào?
+                        <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                    <ul class="answer">
+                        <p>Tất cả dịch vụ xe riêng của chúng tôi đều được trả trước, có nghĩa là bạn sẽ thanh toán online tại thời điểm đặt. Việc thanh toán hoàn toàn bảo mật và chúng tôi chấp nhận hầu hết các thẻ tín dụng và ghi nợ của các thương hiệu lớn, PayPal cũng như các khoản tặng thưởng hợp lệ trong Ví Booking.com của bạn.</p>
+                    </ul>
+                </div>
+                <div class="question">
+                    <span class="question-text">
+                        Tôi có thể hủy đặt xe của mình không?
+                        <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                    <ul class="answer">
+                        <p>Được chứ. Bạn luôn có thể hủy đặt xe miễn phí tối đa 24 giờ trước thời điểm đặt đón khách. Một số đối tác của chúng tôi cho phép hủy miễn phí trong khung thời gian ngắn. Hãy kiểm tra xác nhận đặt xe của bạn để biết thêm thông tin.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="register-recommend">
+            <h2>Tiết kiệm thời gian và tiền bạc!</h2> <br>
+            <p class="styled_text">Hãy đăng ký và chúng tôi sẽ gửi những ưu đãi tốt nhất cho bạn</p> <br>
+            <div class="sub-form">
+                <input type="text" name="" id="" placeholder="Địa chỉ e-mail của bạn" class="resize-form">
+                <button class="styled_button">Đăng ký</button>
+            </div>
+        </div>
+        <div class="submit-accommodation">
+            <button class="styled_button">Đăng chỗ nghỉ của Quý vị</button>
+        </div>
+        <ul class="footer_title">
+            <li><a href="">Phiên bản di động</a></li>
+            <li><a href="">Tài khoản của bạn</a></li>
+            <li><a href="">Thay đổi đặt phòng của bạn trực tuyến</a></li>
+            <li><a href="">Dịch vụ khách hàng</a></li>
+            <li><a href="">Trở thành đối tác phân phối</a></li>
+            <li><a href="">Booking.com dành cho Doanh nghiệp</a></li>
+        </ul>
+        <div class="others">
+            <div class="block">
+                <a href="">Các quốc gia</a>
+                <br> 
+                <a href="">Khu vực</a> 
+                <br> 
+                <a href="">Thành phố</a> 
+                <br> 
+                <a href="">Quận</a> 
+                <br> 
+                <a href="">Sân bay</a>
+                <br> 
+                <a href="">Khách sạn</a>
+                <br> 
+                <a href="">Địa điểm được quan tâm</a>
+            </div>
+            <div class="block">
+                <a href="">Nhà</a>
+                <br> 
+                <a href="">Căn hộ</a>
+                <br> 
+                <a href="">Resort</a>
+                <br> 
+                <a href="">Biệt thự</a>
+                <br> 
+                <a href="">Nhà trọ</a>
+                <br> 
+                <a href="">Nhà nghỉ B&B</a>
+                <br> 
+                <a href="">Nhà khách</a>
+            </div>
+            <div class="block">
+                <a href="">Những chỗ nghỉ độc đáo</a>
+                <br> 
+                <a href="">Tất cả các điểm đến</a>
+                <br> 
+                <a href="">Tất cả các điểm đến có chuyến bay</a>
+                <br> 
+                <a href="">Tất cả địa điểm cho thuê xe</a>
+                <br> 
+                <a href="">Khám phá</a>
+                <br> 
+                <a href="">Đánh giá của khách</a>
+                <br> 
+                <a href="">Khám phá lưu trú theo tháng</a>
+                <br> 
+                <a href="">Các bài viết</a>
+                <br> 
+                <a href="">Ưu đãi theo mùa và dịp lễ</a>
+                <br> 
+                <a href="">Traveller Review Awards</a>
+            </div>
+            <div class="block">
+                <a href="">Cho thuê xe hơi</a>
+                <br> 
+                <a href="">Tìm chuyến bay</a>
+                <br> 
+                <a href="">Đặt nhà hàng</a>
+                <br> 
+                <a href="">Booking.com dành cho Đại Lý Du Lịch</a>
+            </div>
+            <div class="block">
+                <a href="">Các câu hỏi thường gặp về virus corona (COVID-19)</a>
+                <br> 
+                <a href="">Về Booking.com</a>
+                <br> 
+                <a href="">Dịch vụ khách hàng</a>
+                <br> 
+                <a href="">Trợ giúp đối tác</a>
+                <br> 
+                <a href="">Careers</a>
+                <br> 
+                <a href="">Du lịch bền vững</a>
+                <br> 
+                <a href="">Truyền thông</a>
+                <br> 
+                <a href="">Trung tâm thông tin bảo mật</a>
+                <br> 
+                <a href="">Quan hệ cổ đông</a>
+                <br> 
+                <a href="">Điều khoản và điều kiện</a>
+                <br> 
+                <a href="">Tranh chấp đối tác</a>
+                <br> 
+                <a href="">Chúng tôi hoạt động như thế nào</a>
+                <br> 
+                <a href="">Thông báo về Bảo mật & Cookie</a>
+                <br> 
+                <a href="">Chính sách MSA</a>
+                <br> 
+                <a href="">Liên hệ công ty</a>
+                <br> 
+                <a href="">Hướng dẫn nội dung</a>
+            </div>
+        </div>
+        <div class="extranet-login">
+            <a href="">Đăng nhập vào extranet</a>
+        </div>  
+        <div class="copyright_text">
+            <p>Bản quyền © 1996–2023 Booking.com™. Bảo lưu mọi quyền.</p>
+        </div>  
+        <div class="footer_priceline-title">
+            <p>Booking.com là một phần của Booking Holdings Inc., tập đoàn đứng đầu thế giới về du lịch trực tuyến và các dịch vụ liên quan.</p>
+        </div>
+        <div class="footer_priceline-list">
+            <img src="img/booking.png" alt="" title="Booking.com">
+            <img src="img/priceline.png" alt="" title="Priceline">
+            <img src="img/kayak.png" alt="" title="Kayak">
+            <img src="img/agoda.png" alt="" title="Agoda">
+            <img src="img/retalcars.png" alt="" title="Rentalcars">
+            <img src="img/opentable.png" alt="" title="OpenTable">
+        </div>
+    </div>
+    <script src="./js/Airport_taxi.js"></script>

@@ -1,0 +1,229 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header{
+    height: 70px;
+    background-color: #000000;
+}
+.header button{
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14.4px;
+}
+.header .book-ticket{
+    color: #000;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 14.5px;
+    margin-left: 300px;
+    padding: 7px 10px;
+    border-style: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.header .book-ticket i{
+    font-size: 12px;
+    border-radius: 50%;
+    font-weight: 550;
+    border: 1px solid #333;
+    padding: 3px 5px;
+    margin-right: 3px;
+}
+.header .book-ticket:hover{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.flex-container{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.styled_text{
+    color: #fff;
+    text-decoration: none;
+}
+.header .title{
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin: 16px 630px 18px 4px;
+}
+.wrapper_hover{
+    cursor: pointer;
+    border-radius: 4px;
+    border-style: none;
+    background-color: #000;
+    padding: 8px 10px;
+    margin: 10px;
+}
+.wrapper_hover:hover{
+    background-color: rgba(77,77,77,0.4);
+}
+.header .styled_button:hover{
+    background-color: #F0F6FD;
+}
+.icon_flag-vn{
+    width: 28px;
+    background-color: #003B95;
+    position: relative; 
+    top: 2.5px;
+    left: 6px;
+    margin-right: 10px;
+}
+.icon-question{
+    width: 4px;
+    height: 4px;
+    font-size: 16px;
+    font-weight: 450;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    background-color: #003B95;
+    margin: 5px;
+    margin-right: 30px;
+    position: relative;
+    top: 1px;
+    left: 12px;
+    box-sizing: border-box;
+}
+.styled_button{
+    color: #006ce4;
+    font-size: 14px;
+    padding: 7px 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    border-color: #006CE4;
+    border:1px solid #006CE4;
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 5px;
+    margin-left: 2px;
+}
+.header .styled_button:hover{
+    background-color: #F0F6FD;
+}
+
+.container .search_wrapper{
+    width: 938px;
+    height: 165px;
+    border-radius: 10px;
+    padding: 20px 25px;
+}
+.container .background-img{
+    position: relative;
+}
+.container .choose_flight{
+    position: absolute;
+    left: 49.5%;
+    top: 37.8%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 8px;
+}
+.container .search_wrapper .choose-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14.5px;
+    padding-left: 5px;
+    width: 310px;
+    margin-bottom: 15px;
+}
+.container .search_wrapper input[type="radio"]{
+    transform: scale(1.7);
+    margin-right: 5px;
+}
+.container .search_wrapper p{
+    font-size: 15px;
+    padding-left: 7px;
+}
+.fa-arrow-right-arrow-left{
+    font-size: 20px;
+    font-weight: 400;
+    color:#6c6868;
+    padding-left: 12px;
+    padding-right: 15px;
+}
+.container .search_wrapper input[type="text"]{
+    padding: 12px 45px;
+    width: 310px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border-style:none;
+    outline: 1px solid #989898;
+    border-radius: 3px;
+}
+.container .search_wrapper input[type="text"]:focus{
+    outline: 1px solid #006CE4;
+}
+.container .search_wrapper .search-block{
+    position: relative;
+    max-width: 300px;
+}
+.container .search_wrapper .resize-form{
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 14px;
+}
+.container .search_wrapper .search_form{
+    width: 405px;
+    height: 55px;
+    background-color: #fff;
+    margin-left: 5px;
+    border-radius: 4px;
+    position:relative;
+}
+.container .search_wrapper button{
+    padding: 12.5px 15px;
+    font-size: 16px;
+    font-weight: 650;
+    color: #2d2c2c;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #41D3FF;
+    margin-left: 25px;
+}
+.container .search_wrapper button:hover{
+    cursor: pointer;
+    background-color: #2d2c2c;
+    color: white;
+}
+.container .sub-recommend{
+    padding: 10px 170px;
+    justify-content: space-between;
+}
+.container .sub-recommend .flex-container{
+    max-width: 340px;
+}
+.container .sub-recommend .resize-form{
+    height: 38px;
+}
+.container .sub-recommend p{
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 650;
+    color: #262626;
+}
+.footer{
+    padding: 40px 80px;
+    background-color: #000000;
+    margin-top: 20px;
+}
+.footer div{
+    width: 100%;
+    background-color: #1F1F1F;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.footer p{
+    color: white;
+    font-size: 12.5px;
+    text-align: center;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/booking_flight.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+</head>
+<body>
+    <div class="header">
+        <ul class="flex-container">
+            <li><a href=""><img src="img/gotogate.png" alt=""></a></li>
+            <li><button class="wrapper_hover" onclick="open_tab(this)">Các chuyến bay</button></li>
+            <li><button class="wrapper_hover" onclick="open_tab(this)">Hỗ trợ</button></li>
+            <li><button class="wrapper_hover" onclick="open_tab(this)">Những Câu Hỏi Thường Gặp</button></li>
+            <li><button class="book-ticket" onclick="open_tab(this)"><i class="fa-regular fa-user"></i> Hoạt Động Đặt Vé của Tôi </button></li>
+        </ul>
+    </div>
+    <div class="container">
+        <img src="img/br-gotogate.png" alt="" class="background-img">
+        <div class="choose_flight">
+            <table class="search_wrapper">
+                <tr>
+                    <td class="choose-title">
+                        <div><input type="radio" name="choose-title" id=""> <span>Khứ hồi</span></div>
+                        <div><input type="radio" name="choose-title" id=""> <span>Một chiều</span></div>
+                        <div><input type="radio" name="choose-title" id=""> <span>Multi-City</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Từ</p>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <p>Đến</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="search-block">
+                            <input type="text" name="" id="" placeholder="Từ">
+                            <div>
+                                <img src="img/flight_form.png" alt="" class="resize-form">
+                            </div>
+                        </div>
+                        
+                        
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    </td>
+                    <td>
+                        <div class="search-block">
+                            <input type="text" name="" id="local_to" placeholder="Đến">
+                            <div>
+                                <img src="img/flight_to.png" alt="" class="resize-form">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button>Tìm kiếm chuyến bay</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="sub-recommend flex-container">
+            <div class="flex-container">
+                <img src="img/two-circle.png" alt="" class="resize-form">
+                <p>Lựa chọn đa dạng</p>
+            </div>
+            <div class="flex-container">
+                <img src="img/battay.png" alt="" class="resize-form">
+                <p>Được 22 triệu hành khách tin tưởng hàng năm</p>
+            </div>
+            <div class="flex-container">
+                <img src="img/word-green.png" alt="" class="resize-form">
+                <p>Hơn 20 năm kinh nghiệm</p>
+            </div>
+        </div>
+
+        <!-- <div class="popular_flights">
+            <h4>Chuyến bay phổ biến gần bạn</h4>
+            <p>Tìm ưu đãi cho chuyến bay trong nước và quốc tế</p>
+            <div class="flex_container">
+                <button>Quốc tế</button>
+                <button>Trong nước</button>
+            </div>
+            <div class="sub_wrapper">
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="trend_cities">
+            <h3>Thành phố đang nổi</h3>
+            <p>Đặt chuyến bay đến địa điểm ưa chuộng của du khách từ từ Ấn Độ</p>
+            <div class="sub_wrapper">
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+                <div class="sub_form">
+                    <a href=""><img src="" alt=""></a> 
+                    <a href="">Hyderabad đến Singapore</a> <br>
+                    <a href="">1 tháng 10 - 8 tháng 10 · Khứ hồi</a>
+                </div>
+            </div>
+        </div>
+        <div class="content_introduce">
+
+        </div>
+        <div class="flight_with_booking">
+            <h3>Bay khắp thế giới cùng Booking.com</h3>
+            <p>Chuyến bay đến mọi địa điểm bạn muốn, dù bạn ở bất kỳ nơi nào</p>
+            
+        </div> -->
+    </div>
+    <div class="footer">
+        <div>
+            <img src="img/visa.png" alt="">
+        </div>
+        <p class="copyright_text">Gotogate / Gotogate International AB, Box 1340, SE-751 43 Uppsala, Sweden. Corp. ID no. 556538-1265, VAT no. SE556538126501</p>
+        <p class="copyright_text">© 2023 Gotogate. Đã Đăng Ký Bản Quyền.</p>
+    </div>
+    <script src="./js/booking_flight.js"></script>
+</body>
+</html>

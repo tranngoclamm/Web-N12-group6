@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="js/booking.js">
+</head>
+<body>
+    <div class="header">
+        <ul class="flex-container">
+            <li><a href="" class="title styled_text">Booking.com</a></li>
+            <li><button id="currency" class="styled_text choose_currency" onclick="choose_currency()">VND</button></li>
+            <li><button id="language" class="icon_flag-vn choose_language" onclick="choose_language()"><img class="icon_flag-vn" id="image" src="img/Vn@3x.png" alt=""></button></li>
+            <li class=""><button class="icon-question styled_text " onclick="question()">?</button></li>
+            <li><a href="https://join.booking.com/?lang=vi" class="styled_text join-booking wrapper_hover">Đăng chỗ nghỉ của Quý vị</a></li>
+            <li><a href="https://account.booking.com/register" class="styled_button">Đăng ký</a></li>
+            <li><a href="https://account.booking.com/sign-in" class="styled_button">Đăng nhập</a></li>
+        </ul>
+        <div class="flex-container">
+            <div class="wrapper-hover flex-container  white-border">
+                <a href=""><img class="resize-form" src="img/bed.jpg" alt=""></a>
+                <a href="" class="styled_text">Lưu trú</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_flight.html"><img class="resize-form" src="img/airplane.jpg" alt=""></a>
+                <a href="booking_flight.html" class="styled_text">Chuyến bay</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_and_hotel.html"><img class="resize-form" src="img/2023-09-04_182311.jpg" alt=""></a>
+                <a href="booking_and_hotel.html" class="styled_text">Chuyến bay + Khách sạn</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="rent-car.html"><img class="resize-form" src="img/car.jpg" alt=""></a>
+                <a href="rent-car.html" class="styled_text">Thuê xe</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="vist_location.html"><img class="resize-form" src="img/location.jpg" alt=""></a>
+                <a href="vist_location.html" class="styled_text">Địa điểm tham quan</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="Airport_taxi.html"><img class="resize-form" src="img/taxi.jpg" alt=""></a>
+                <a href="Airport_taxi.html" class="styled_text">Taxi sân bay</a>
+            </div>
+        </div>
+        <p class="big_text-size">Tìm chỗ nghỉ tiếp theo</p>
+        <p class="medium_text-size">Tìm ưu đãi khách sạn, chỗ nghỉ dạng nhà và nhiều hơn nữa...</p>
+    </div>
+    <div class="container">
+        <div class="search_wrapper flex-container">
+            <div class="search_form flex-container">
+                <input type="text" name="" id="" placeholder="Bạn muốn đến đâu?" class="styled_text txt_text">
+            </div>
+            <div class="search_form flex-container">
+                <button class="styled_button"><img src="img/calendar.png" alt="" class="resize-form"></button>
+                <button id="check_in-date" class="styled_text" onclick="check_in()">Ngày nhận ph...</button>
+                <input type="date" name="" id="check_in-table" style="display: none;">
+                <p>&MediumSpace; — &nbsp;</p>
+                <button id="check_out-date" class="styled_text" onclick="check_out()">Ngày trả phò...</button>
+                <input type="date" name="" id="check_out-table" style="display: none;">
+            </div>
+            <div class="number_person-wrapper search_form flex-container">
+                <button class="styled_button" onclick="numer_person()"><img src="img/human.png" alt="" class="resize-form"></button>
+                <div onclick="numer_person" class="numer_person">
+                    <span id="number_adult" onclick="numer_person()">2 người lớn</span>
+                    <span>&CenterDot;</span>
+                    <span id="number_children" onclick="numer_person()">0 trẻ em</span>
+                    <span>&CenterDot;</span>
+                    <span id="number_room" onclick="numer_person()">1 phòng</span>
+                    <i onclick="numer_person()" class="fa-solid fa-angle-down"></i>
+                </div>
+                
+            </div>
+            <table id="number_person-control">
+                <tr>
+                    <td>Người lớn</td>
+                    <td><input id="number_adult-control" type="number" min="0" max="100" step="1" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Trẻ em</td>
+                    <td><input id="number_children-control" type="number" min="0" max="100" step="1" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Phòng</td>
+                    <td><input id="number_room-control" type="number" min="0" max="100" step="1" value="0"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="done" class="styled_button">Xong</button></td>
+                </tr>
+            </table>
+            <button class="color-button" onclick="find_local()">Tìm</button>
+        </div>
+        <div class="checkbox-form">
+            <div class="sub-form">
+                <input type="checkbox" name="" id="" class="big-size">
+                <a href="" class="txt_checkbox">Tôi đang tìm nhà hoặc căn hộ nguyên căn</a>
+            </div>
+            <div class="sub-form">
+                <input type="checkbox" name="" id="" class="big-size">
+                <a href="" class="txt_checkbox">Tôi đi công tác</a>
+            </div>
+        </div>
+        <div class="promotion_wrapper">
+            <h2>Ưu đãi</h2>
+            <p>Khuyến mãi, giảm giá và ưu đãi đặc biệt giành riêng cho bạn</p> 
+            <div class="flex-container">
+                <div class="block1">
+                    <div>
+                        <img src="img/beach.jpeg" alt="" class="resize-form">
+                        <div class="sub-form styled_text">
+                            <p class="styled_link">Vi vu theo cách của bạn</p>
+                            <p>Tiết kiệm ít nhất 15% cho lưu trú toàn cầu, từ nghỉ dưỡng đến phiêu lưu hoang dã</p>
+                            <button class="styled_button color-button">Tìm Ưu Đãi Mùa Du Lịch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="block2" style="display: non;">
+                    <div class="sub-form">
+                        <p class="styled_link">Tận hưởng kỳ nghỉ dài nhất của bạn</p>
+                        <p>Tìm kiếm các chỗ nghỉ cho phép lưu trú dài ngày với giá theo tháng ưu đãi.</p>
+                        <button class="styled_button color-button">Tìm chỗ nghỉ</button>
+                    </div>
+                    <img src="img/holiday.jpeg" alt="" class="resize-form">
+                </div>
+                <div class="block3">
+                    <div>
+                        <img src="img/giamgia.png" alt="" class="resize-form">
+                        <div class="sub-form styled_text">
+                            <p class="styled_link">Hàng ngàn Ưu Đãi Hấp Dẫn</p>
+                            <p>Khám phá hàng nghìn điểm đến khắp thế giới, tiết kiệm với ưu đãi tốt nhất</p>
+                            <button class="styled_button color-button">Đến Ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trend_location">
+            <h2>Điểm đến đang thịnh hành</h2>
+            <p>Các lựa chọn phổ biến nhất cho du khách từ Việt Nam</p>
+            <div class="sub_big-form">
+                <div class="img_caption">
+                    <a href=""><img src="img/danang.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text flex-container">
+                        <a href="">Đà Nẵng</a> 
+                        <a href=""><img src="img/Wikipedia-Flags-VN-Vietnam-Flag.svg" alt="" class="resize-form"></a>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/hochiminh1.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text flex-container">
+                        <a href="">TP. Hồ Chí Minh</a> 
+                        <a href=""><img src="img/Wikipedia-Flags-VN-Vietnam-Flag.svg" alt="" class="resize-form"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_small-form">
+                <div class="img_caption">
+                    <a href=""><img src="img/hanoi1.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text flex-container">
+                        <a href="">Hà Nội</a> 
+                        <a href=""><img src="img/Wikipedia-Flags-VN-Vietnam-Flag.svg" alt="" class="resize-form"></a>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/vungtau1.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text flex-container">
+                        <a href="">Vũng Tàu
+                        <a href=""><img src="img/Wikipedia-Flags-VN-Vietnam-Flag.svg" alt="" class="resize-form"></a>
+                    </div>
+                </div>
+                <div class="img_caption">
+                    <a href=""><img src="img/dalat.jpg" alt="" class="resize-form"></a>
+                    <div class="styled_text flex-container">
+                        <a href="">Đà Lạt</a> 
+                        <a href=""><img src="img/Wikipedia-Flags-VN-Vietnam-Flag.svg" alt="" class="resize-form"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accommodation_category-wrapper">
+            <div class="accommodation-category">
+                <h2>Tìm theo loại chỗ nghỉ</h2>
+                <i class="fa-solid fa-angle-left" onclick="slideLeft()"></i>
+                <i class="fa-solid fa-angle-right" onclick="slideRight()"></i>
+                <div class="block_wrapper">
+                    <div class="sub-form">
+                        <a href=""><img src="img/hotel.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Khách sạn</a> <br>
+                        <a href="" class="styled_text">1.002.277 khách sạn</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/house1.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Căn hộ</a><br>
+                        <a href="" class="styled_text">1.249.330 căn hộ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/resort.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Resort</a> <br>
+                        <a href="" class="styled_text">19.830 resort</a>
+    
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/bietthu.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Biệt thự</a> <br>
+                        <a href="" class="styled_text">658.777 biệt thự</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhago.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà gỗ</a> <br>
+                        <a href="" class="styled_text">452 nhà gỗ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhanghimat.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà nghỉ mát</a> <br>
+                        <a href="" class="styled_text">1.777 nhà nghỉ mát</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhakhach.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà khách</a> <br>
+                        <a href="" class="styled_text">658 nhà khách</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatro.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà trọ</a> <br>
+                        <a href="" class="styled_text">7.635.532 nhà trọ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhanghivenduong.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà nghỉ ven đường</a> <br>
+                        <a href="" class="styled_text">658.823 nhà nghỉ ven đường</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhanghibq.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nhà nghỉ B&B</a> <br>
+                        <a href="" class="styled_text">846 nhà nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/congviennghimat.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Công viên nghỉ mát</a> <br>
+                        <a href="" class="styled_text">671.562 công viên</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/chonghinhadan.jpeg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Chỗ nghỉ nhà dân</a> <br>
+                        <a href="" class="styled_text">963.571 chỗ nghỉ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vietnam_travel-wrapper">
+            <div class="vietnam-travel">
+                <h2>Khám phá Việt Nam</h2>
+                <i class="fa-solid fa-angle-left" onclick="slideLeft_vntravel()"></i>
+                <i class="fa-solid fa-angle-right" onclick="slideRight_vntravel()"></i>
+                <p>Các điểm đến phổ biến này có nhiều điều chờ đón bạn</p>
+                <div class="block_wrapper">
+                    <div class="sub-form">
+                        <a href=""><img src="img/vungtau-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Vũng Tàu</a> <br>
+                        <a href="" class="styled_text">1.829 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dalat-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Đà Lạt</a><br>
+                        <a href="" class="styled_text">2.144 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hanoi-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hà Nội</a> <br>
+                        <a href="" class="styled_text">3.809 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hochiminh-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">TP. Hồ Chí Minh</a> <br>
+                        <a href="" class="styled_text">5.612 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dannang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Đà Nẵng</a> <br>
+                        <a href="" class="styled_text">2.511 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                        <a href="" class="styled_text">1.660 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                        <a href="" class="styled_text">1.330 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/bavi-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Ba Vì</a> <br>
+                        <a href="" class="styled_text">153 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/sapa-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Sa Pa</a> <br>
+                        <a href="" class="styled_text">432 chỗ nghỉ</a>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/ninhbinh-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Ninh Bình</a> <br>
+                        <a href="" class="styled_text">852 chỗ nghỉ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_destinations-wrapper">
+            <div class="top-destinations">
+                <h2>Lên kế hoạch dễ dàng và nhanh chóng</h2>
+                <p>Khám phá các điểm đến hàng đầu theo cách bạn thích ở Việt Nam</p>
+                <i id="slideLeft_topdestination" class="fa-solid fa-angle-left" onclick="slideLeft_topdestination()"></i>
+                <i id="slideRight_topdestination" class="fa-solid fa-angle-right" onclick="slideRight_topdestination()"></i>
+                
+                <div class="flex-container top_destinations-title">
+                    <button class="sub-form choose-titl" id="city" onclick="showContent(this)">
+                        <img src="img/city-icon.png" alt="" class="resize-form">
+                        <span>Thành phố</span>
+                    </button>
+                    <button class="sub-form" id="relax" onclick="showContent(this)">
+                        <img src="img/relax-icon.png" alt="" class="resize-form">
+                        <span class="styled_text">Thư giãn</span>
+                    </button>
+                    <button class="sub-form" id="food" onclick="showContent(this)">
+                        <img src="img/food-icon.png" alt="" class="resize-form">
+                        <span class="styled_text">Ẩm thực</span>
+                    </button>
+                    <button class="sub-form" id="beach" onclick="showContent(this)">
+                        <img src="img/beach-icon.png" alt="" class="resize-form">
+                        <span class="styled_text">Bãi biển</span>
+                    </button>
+                    <button class="sub-form" id="romance" onclick="showContent(this)">
+                        <img src="img/love-icon.png" alt="" class="resize-form">
+                        <span class="styled_text">Lãng mạn</span>
+                    </button>
+                    <button class="sub-form" id="nature" onclick="showContent(this)">
+                        <img src="img/nature-icon.png" alt="" class="resize-form">
+                        <span class="styled_text">Thiên nhiên</span>
+                    </button>
+                </div>
+                <div id="city-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/haiphong-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Thành phố Hải Phòng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dienbien-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Điện Biên Phủ</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hue-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Huế</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dannang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Đà Nẵng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hanoi-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hà Nội</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hochiminh-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hồ Chí Minh</a> <br>
+                    </div>
+                </div>
+                <div id="relax-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/hue-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Huế</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dannang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Đà Nẵng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dienbien-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Điện Biên Phủ</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                    </div>
+                </div>
+                <div id="food-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/hue-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Huế</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hanoi-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hà Nội</a> <br>
+                    </div>
+                </div>
+                <div id="beach-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/haiphong-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Thành phố Hải Phòng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/dannang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Đà Nẵng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                    </div>
+                </div>
+                <div id="romance-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/haiphong-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Thành phố Hải Phòng</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hue-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Huế</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/nhatrang-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Nha Trang</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hanoi-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hà Nội</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hochiminh-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hồ Chí Minh</a> <br>
+                    </div>
+                </div>
+                <div id="nature-content" class="block_wrapper show-content">
+                    <div class="sub-form">
+                        <a href=""><img src="img/hue-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Huế</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/hoian-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Hội An</a> <br>
+                    </div>
+                    <div class="sub-form">
+                        <a href=""><img src="img/sapa-small.jpg" alt="" class="resize-form"></a>
+                        <a href="" class="styled_link">Sa Pa</a> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="unique_accommodations-wrapper">
+            <div class="unique-accommodations">
+                <i id="slideLeft_uni-accom" class="fa-solid fa-angle-left" onclick="slideLeft_uni_accom()"></i>
+                <i id="slideRight_uni-accom" class="fa-solid fa-angle-right" onclick="slideRight_uni_accom()"></i>
+                <h2>Lưu trú tại các chỗ nghỉ độc đáo hàng đầu</h2>
+                <p>Từ biệt thự, lâu đài cho đến các nhà thuyền, igloo, chúng tôi đều có hết</p>
+                <div class="block_wrapper flex-container">
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/waldschenke.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Waldschenke Stendenitz Übernachten im Wald am See</a> <br>
+                        <a href="" class="styled_text">Đức, Neuruppin</a> <br>
+                        <button class="styled_rating">8.6</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 281 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/harbor.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Harbor View</a> <br>
+                        <a href="" class="styled_text">Vương Quốc Anh, Isle Of Skye</a> <br>
+                        <button class="styled_rating">9.1</button>
+                        <label for="">Tuyệt hảo </label>
+                        <label for="">· 140 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/casarural.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Casa Rural La Marquesa - Cuenca</a> <br>
+                        <a href="" class="styled_text">Tây Ban Nha, Valera de Abajo</a> <br>
+                        <button class="styled_rating">9.5</button>
+                        <label for="">Xuất sắc </label>
+                        <label for="">· 62 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/laroulotte.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">La Roulotte de Ciney</a> <br>
+                        <a href="" class="styled_text">Bỉ, Ciney</a> <br>
+                        <button class="styled_rating">8.3</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 91 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/7seasons.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">7Seasons Apartments Budapest</a> <br>
+                        <a href="" class="styled_text">06. Terézváros, Hungary, Budapest</a> <br>
+                        <button class="styled_rating">8.7</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 8.968 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/oriente.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Oriente Palace Apartments</a> <br>
+                        <a href="" class="styled_text">Centro, Tây Ban Nha, Madrid</a> <br>
+                        <button class="styled_rating">8.9</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 2.917 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/mayapartmen.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">May's Apartments by May's</a> <br>
+                        <a href="" class="styled_text">Na Uy, Reine</a> <br>
+                        <button class="styled_rating">8.2</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 853 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/auberge.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Auberge La Seigneurie Valcartier</a> <br>
+                        <a href="" class="styled_text">Canada, Saint-Gabriel-de-Valcartier</a> <br>
+                        <button class="styled_rating">8.1</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 236 đánh giá</label> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/mfc.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">MFC Erfurter Seen</a> <br>
+                        <a href="" class="styled_text">Đức, Erfurt</a> <br>
+                        <button class="styled_rating">8.2</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 176 đánh giá</label> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="favorite_accommodations-wrapper">
+            <div class="favorite-accommodations">
+                <div class="title">
+                    <h2>Nhà ở mà khách yêu thích</h2>
+                    <a href="https://www.booking.com/booking-home/index.vi.html?">Tìm các chỗ nghỉ như ở nhà</a>
+                </div>
+                <i id="slideLeft_favor-accom" class="fa-solid fa-angle-left" onclick="slideLeft_favor_accom()"></i>
+                <i id="slideRight_favor-accom" class="fa-solid fa-angle-right" onclick="slideRight_favor_accom()"></i>
+    
+                <div class="block_wrapper flex-container">
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/aparthotel.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Aparthotel Stare Miasto</a> <br>
+                        <a href="" class="styled_text">Old Town, Ba Lan, Kraków</a> <br>
+                        <button class="styled_rating">8.7</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 2.453 đánh giá</label> 
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 2.706.326</a>
+                        </div>
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/7seasons.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">7Seasons Apartments Budapest</a> <br>
+                        <a href="" class="styled_text">06. Terézváros, Hungary, Budapest</a> <br>
+                        <button class="styled_rating">8.7</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 8.743 đánh giá</label> 
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 4.113.227</a>
+                        </div>
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/ruede.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Rue du Château</a> <br>
+                        <a href="" class="styled_text">Pháp, Tarascon</a> <br>
+                        <button class="styled_rating">8.9</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 373 đánh giá</label> 
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 6.206.526</a>
+                        </div>
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/casarural.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Casa Rural La Marquesa - Cuenca</a> <br>
+                        <a href="" class="styled_text">Tây Ban Nha, Valera de Abajo</a> <br>
+                        <button class="styled_rating">9.5</button>
+                        <label for="">Xuất sắc </label>
+                        <label for="">· 62 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 12.306.326</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/oriente.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Oriente Palace Apartments</a> <br>
+                        <a href="" class="styled_text">Centro, Tây Ban Nha, Madrid</a> <br>
+                        <button class="styled_rating">8.9</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 2.968 đánh giá</label> 
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 4.613.823</a>
+                        </div>
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/laroulotte.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">La Roulotte de Ciney</a> <br>
+                        <a href="" class="styled_text">Bỉ, Ciney</a> <br>
+                        <button class="styled_rating">8.3</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 91 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 5.963.126</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/7seasons.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">7Seasons Apartments Budapest</a> <br>
+                        <a href="" class="styled_text">06. Terézváros, Hungary, Budapest</a> <br>
+                        <button class="styled_rating">8.7</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 8.968 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 6.106.120</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/mayapartmen.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">May's Apartments by May's</a> <br>
+                        <a href="" class="styled_text">Na Uy, Reine</a> <br>
+                        <button class="styled_rating">8.2</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 853 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 4.509.326</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/mfc.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">MFC Erfurter Seen</a> <br>
+                        <a href="" class="styled_text">Đức, Erfurt</a> <br>
+                        <button class="styled_rating">8.2</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 176 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 9.506.226</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/auberge.webp" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Auberge La Seigneurie Valcartier</a> <br>
+                        <a href="" class="styled_text">Canada, Saint-Gabriel-de-Valcartier</a> <br>
+                        <button class="styled_rating">8.1</button>
+                        <label for="">Rất tốt </label>
+                        <label for="">· 236 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 6.406.126</a>
+                        </div> 
+                    </div>
+                    <div class="sub-form resize-form">
+                        <a href=""><img src="img/oriente.jpg" alt="" class="resize-form"></a> <br>
+                        <a href="" class="styled_link">Oriente Palace Apartments</a> <br>
+                        <a href="" class="styled_text">Centro, Tây Ban Nha, Madrid</a> <br>
+                        <button class="styled_rating">8.9</button>
+                        <label for="">Tuyệt vời </label>
+                        <label for="">· 2.917 đánh giá</label>
+                        <div class="flex-container">
+                            <a href="" class="styled_text">Bắt đầu từ</a>
+                            <a href="" class="styled_link">VND 9.386.846</a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="banner">
+            <div class="access-form">
+                <img src="img/GlobeGeniusBadge.png" alt="" class="resize-form">
+                <div class="sub-form">
+                    <h2>Nhận giảm giá tức thì</h2>
+                    <p>Chỉ cần đăng nhập tài khoản Booking.com của bạn và tìm logo Genius màu xanh dương để tiết kiệm</p><br>
+                    <a href="https://account.booking.com/sign-in?" class="styled_button">Đăng nhập</a>
+                    <a href="https://account.booking.com/sign-in?" class="styled_button">Đăng ký</a>
+                </div>
+            </div>
+            <div class="looking_for-travel">
+                <div class="yellow-circle"></div>
+                <div class="blue-circle">
+                    <div class="sub-form">
+                        <a href="" class="styled_text">Tìm</a> <br>
+                        <div class="wordList">
+                            <ul id="wordList">
+                                <li class="word"><a href="" class="styled_text">nhà</a></li>
+                                <li class="word"><a href="" class="styled_text">căn hộ</a></li>
+                                <li class="word"><a href="" class="styled_text">biệt thự</a></li>
+                                <li class="word"><a href="" class="styled_text">khách sạn căn hộ</a></li>
+                                <li class="word"><a href="" class="styled_text">nhà nghỉ dưỡng</a></li>
+                                <li class="word"><a href="" class="styled_text">cottage</a></li>
+                              </ul>
+                        </div>
+                        
+                         
+                        <a href="" class="styled_text">cho chuyến đi tới</a><br>
+                        <button>Khám phá chỗ nghỉ như ở nhà</button>    
+                    </div>
+                </div>
+                <img src="img/bh_aw_cpg_main_image.b4347622.png" alt="">
+            </div>
+        </div>
+        <div class="favorite-recommends">
+            <h2>Các điểm đến được chúng tôi ưa thích</h2>
+            <ul>
+                <li><button id="area_favor" class="choose-title" onclick="showContent_favor(this)">Khu vực</button></li>
+                <li><button id="city_favor" onclick="showContent_favor(this)">Thành phố</button></li>
+                <li><button id="local_favor" onclick="showContent_favor(this)">Địa điểm được quan tâm</button></li>
+            </ul>
+            <div id="area_favor-content" class="locations flex-containe">
+                <div class="sub-form">
+                    <a href="" class="styled_link">Thanh Hóa</a>
+                    <p class="styled_text">254 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bạc Liêu</a>
+                    <p class="styled_text">23 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Phú Yên</a>
+                    <p class="styled_text">212 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bình Thuận</a>
+                    <p class ="styled_text">604 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Thừa Thiên - Huế</a>
+                    <p class ="styled_text">518 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Gia Lai</a>
+                    <p class ="styled_text">86 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hà Tĩnh</a>
+                    <p class ="styled_text">37 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Cần Thơ</a>
+                    <p class="styled_text">353 chỗ nghỉ<p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Vịnh Hạ Long</a>
+                    <p class="styled_text">1,370 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Đắc Lắc</a>
+                    <p class="styled_text">123 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bình Thuận</a>
+                    <p class="styled_text">601 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Vĩnh Long</a>
+                    <p class="styled_text">42 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Trà Vinh</a>
+                    <p class="styled_text">17 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bình Dương</a>
+                    <p class="styled_text">78 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Phú Yên</a>
+                    <p class="styled_text">213 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Quảng Bình</a>
+                    <p class="styled_text">267 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Khu vực TP. Hồ Chí Minh</a>
+                    <p class="styled_text">5,638 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Ninh Thuận</a>
+                    <p class="styled_text">145 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Thừa Thiên - Huế</a>
+                    <p class="styled_text">521 chỗ nghỉ</p>
+                </div>
+            </div>
+            <div id="city_favor-content" class="locations flex-containe">
+                <div class="sub-form">
+                    <a href="" class="styled_link">Quy Nhơn, Việt Nam</a>
+                    <p class="styled_text">605 biệt thự, căn hộ và nhà nghỉ dưỡng, 12 nhà nghỉ thôn dã</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Tam Ðảo, Việt Nam</a>
+                    <p class="styled_text">18 biệt thự, căn hộ và nhà nghỉ dưỡng, 7 nhà nghỉ thôn dã</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Long Hải</a>
+                    <p class="styled_text">84 khách sạn</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Tuy Hoà</a>
+                    <p class ="styled_text">141 khách sạn</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Phan Rang, Việt Nam</a>
+                    <p class ="styled_text">21 biệt thự, căn hộ và nhà nghỉ dưỡng</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Nha Trang, Việt Nam</a>
+                    <p class ="styled_text">550 biệt thự, căn hộ và nhà nghỉ dưỡng, 64 nhà nghỉ thôn dã</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Vĩnh Long</a>
+                    <p class ="styled_text">36 khách sạn</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Trà Vinh</a>
+                    <p class="styled_text">14 khách sạn<p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Đà Nẵng, Việt Nam</a>
+                    <p class="styled_text">726 biệt thự, căn hộ và nhà nghỉ dưỡng, 205 nhà nghỉ thôn dã</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Phú Quốc, Việt Nam</a>
+                    <p class="styled_text">401 biệt thự, căn hộ và nhà nghỉ dưỡng, 90 nhà nghỉ thôn dã, 12 nhà gỗ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Vinh</a>
+                    <p class="styled_text">34 khách sạn</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">TP. Hồ Chí Minh</a>
+                    <p class="styled_text">5605 khách sạn</p>
+                </div>
+            </div>
+            <div id="local_favor-content" class="locations flex-containe">
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hồ Xuân Hương</a>
+                    <p class="styled_text">2,254 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Chợ Đà Lạt</a>
+                    <p class="styled_text">2,345 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bãi Sau</a>
+                    <p class="styled_text">8,212 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Cầu Rồng</a>
+                    <p class ="styled_text">2,604 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Ga Nha Trang</a>
+                    <p class ="styled_text">1,518 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Chợ dêm Phú Quốc</a>
+                    <p class ="styled_text">86 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Cầu sông Hàn</a>
+                    <p class ="styled_text">347 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Phố đi bộ Nguyễn Huệ</a>
+                    <p class="styled_text">353 chỗ nghỉ<p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bến Ninh Kiều</a>
+                    <p class="styled_text">370 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Đảo Hòn Tre</a>
+                    <p class="styled_text">1,234 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Ga Hòa Hưng</a>
+                    <p class="styled_text">601 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hồ Tây</a>
+                    <p class="styled_text">42 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Bãi Trước</a>
+                    <p class="styled_text">17 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hồ Tuyền Lâm</a>
+                    <p class="styled_text">78 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Chợ nổi Cái Răng</a>
+                    <p class="styled_text">213 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Ga Hà Nội</a>
+                    <p class="styled_text">267 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hồ Hoàn Kiếm</a>
+                    <p class="styled_text">5,638 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Chợ Bến Thành</a>
+                    <p class="styled_text">145 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Hòn Tằm</a>
+                    <p class="styled_text">521 chỗ nghỉ</p>
+                </div>
+                <div class="sub-form">
+                    <a href="" class="styled_link">Công viên Vinpearl</a>
+                    <p class="styled_text">1,657 chỗ nghỉ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="register-recommend">
+            <h2>Tiết kiệm thời gian và tiền bạc!</h2> <br>
+            <p class="styled_text">Hãy đăng ký và chúng tôi sẽ gửi những ưu đãi tốt nhất cho bạn</p> <br>
+            <div class="sub-form">
+                <input type="text" name="" id="" placeholder="Địa chỉ e-mail của bạn" class="resize-form">
+                <button class="styled_button">Đăng ký</button>
+            </div>
+        </div>
+        <div class="submit-accommodation">
+            <a href="https://join.booking.com/?lang=vi&utm_source=footer_menu&utm_medium=frontend" class="styled_button">Đăng chỗ nghỉ của Quý vị</a>
+        </div>
+        <ul class="footer_title">
+            <li><a href="">Phiên bản di động</a></li>
+            <li><a href="">Tài khoản của bạn</a></li>
+            <li><a href="">Thay đổi đặt phòng của bạn trực tuyến</a></li>
+            <li><a href="">Dịch vụ khách hàng</a></li>
+            <li><a href="">Trở thành đối tác phân phối</a></li>
+            <li><a href="">Booking.com dành cho Doanh nghiệp</a></li>
+        </ul>
+        <div class="others">
+            <div class="block">
+                <a href="">Các quốc gia</a>
+                <br> 
+                <a href="">Khu vực</a> 
+                <br> 
+                <a href="">Thành phố</a> 
+                <br> 
+                <a href="">Quận</a> 
+                <br> 
+                <a href="">Sân bay</a>
+                <br> 
+                <a href="">Khách sạn</a>
+                <br> 
+                <a href="">Địa điểm được quan tâm</a>
+            </div>
+            <div class="block">
+                <a href="">Nhà</a>
+                <br> 
+                <a href="">Căn hộ</a>
+                <br> 
+                <a href="">Resort</a>
+                <br> 
+                <a href="">Biệt thự</a>
+                <br> 
+                <a href="">Nhà trọ</a>
+                <br> 
+                <a href="">Nhà nghỉ B&B</a>
+                <br> 
+                <a href="">Nhà khách</a>
+            </div>
+            <div class="block">
+                <a href="">Những chỗ nghỉ độc đáo</a>
+                <br> 
+                <a href="">Tất cả các điểm đến</a>
+                <br> 
+                <a href="">Tất cả các điểm đến có chuyến bay</a>
+                <br> 
+                <a href="">Tất cả địa điểm cho thuê xe</a>
+                <br> 
+                <a href="">Khám phá</a>
+                <br> 
+                <a href="">Đánh giá của khách</a>
+                <br> 
+                <a href="">Khám phá lưu trú theo tháng</a>
+                <br> 
+                <a href="">Các bài viết</a>
+                <br> 
+                <a href="">Ưu đãi theo mùa và dịp lễ</a>
+                <br> 
+                <a href="">Traveller Review Awards</a>
+            </div>
+            <div class="block">
+                <a href="">Cho thuê xe hơi</a>
+                <br> 
+                <a href="">Tìm chuyến bay</a>
+                <br> 
+                <a href="">Đặt nhà hàng</a>
+                <br> 
+                <a href="">Booking.com dành cho Đại Lý Du Lịch</a>
+            </div>
+            <div class="block">
+                <a href="">Các câu hỏi thường gặp về virus corona (COVID-19)</a>
+                <br> 
+                <a href="">Về Booking.com</a>
+                <br> 
+                <a href="">Dịch vụ khách hàng</a>
+                <br> 
+                <a href="">Trợ giúp đối tác</a>
+                <br> 
+                <a href="">Careers</a>
+                <br> 
+                <a href="">Du lịch bền vững</a>
+                <br> 
+                <a href="">Truyền thông</a>
+                <br> 
+                <a href="">Trung tâm thông tin bảo mật</a>
+                <br> 
+                <a href="">Quan hệ cổ đông</a>
+                <br> 
+                <a href="">Điều khoản và điều kiện</a>
+                <br> 
+                <a href="">Tranh chấp đối tác</a>
+                <br> 
+                <a href="">Chúng tôi hoạt động như thế nào</a>
+                <br> 
+                <a href="">Thông báo về Bảo mật & Cookie</a>
+                <br> 
+                <a href="">Chính sách MSA</a>
+                <br> 
+                <a href="">Liên hệ công ty</a>
+                <br> 
+                <a href="">Hướng dẫn nội dung</a>
+            </div>
+        </div>
+        <div class="extranet-login">
+            <a href="">Đăng nhập vào extranet</a>
+        </div>  
+        <div class="copyright_text">
+            <p>Bản quyền © 1996–2023 Booking.com™. Bảo lưu mọi quyền.</p>
+        </div>  
+        <div class="footer_priceline-title">
+            <p>Booking.com là một phần của Booking Holdings Inc., tập đoàn đứng đầu thế giới về du lịch trực tuyến và các dịch vụ liên quan.</p>
+        </div>
+        <div class="footer_priceline-list">
+            <img src="img/booking.png" alt="" title="Booking.com">
+            <img src="img/priceline.png" alt="" title="Priceline">
+            <img src="img/kayak.png" alt="" title="Kayak">
+            <img src="img/agoda.png" alt="" title="Agoda">
+            <img src="img/retalcars.png" alt="" title="Rentalcars">
+            <img src="img/opentable.png" alt="" title="OpenTable">
+        </div>
+    </div>
+    <div class="modals">
+        <div id="change_currency-content" class="change_currency-wrapper">
+            <div class="form">
+                <h3>Chọn loại tiền tệ của bạn</h3>
+                <i class="fa-solid fa-x" onclick="close_table()"></i>
+                <p>Trong trường hợp có thể áp dụng, giá sẽ được quy đổi và hiển thị theo loại tiền tệ mà bạn chọn. Có thể bạn sẽ thanh toán bằng loại tiền tệ khác tùy vào chỗ nghỉ bạn đặt và phí dịch vụ cũng có thể được áp dụng.</p>
+                <h4>Được đề xuất cho bạn</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <span class="">Đô la Mỹ</span> <br>
+                        <span class="">USD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Euro</span> <br>
+                        <span>EUR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Won Hàn Quốc</span> <br>
+                        <span>KRW</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Úc</span> <br>
+                        <span>AUD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Singapore</span> <br>
+                        <span>SGD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Yên Nhật</span> <br>
+                        <span>JPY</span>
+                    </button>
+                </div>
+                <h4>Tất cả loại tiền tệ</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <span>Đồng Việt Nam</span> <br>
+                        <span>VND</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Tiền tệ của chỗ nghỉ</span> <br>
+                        <span>€$£</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bạt Thái</span> <br>
+                        <span>THB</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bảng Ai Cập</span> <br>
+                        <span>EGP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Bảng Anh</span> <br>
+                        <span>GBP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Bahrain</span> <br>
+                        <span>BHD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Jordan</span> <br>
+                        <span>JOD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dinar Kuwait</span> <br>
+                        <span>KWD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Dirham UAE</span> <br>
+                        <span>AED</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Euro</span> <br>
+                        <span>EUR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Forint</span> <br>
+                        <span>HUF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Franc CFA Tây Phi</span> <br>
+                        <span>XOF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Franc Thụy Sỹ</span> <br>
+                        <span>CHF</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Hryvnia Ukraine</span> <br>
+                        <span>UAH</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Koruna Séc</span> <br>
+                        <span>CZK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krona Thụy Điển</span> <br>
+                        <span>SEK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krone Na Uy</span> <br>
+                        <span>NOK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Krone Đan Mạch</span> <br>
+                        <span>DKK</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lari</span> <br>
+                        <span>GEL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Leu Moldova</span> <br>
+                        <span>MDL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Leu mới Romania</span> <br>
+                        <span>RON</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lev</span> <br>
+                        <span>BGN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Lira Thổ Nhĩ Kỳ</span> <br>
+                        <span>TRY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Manat Azerbaijan cũ</span> <br>
+                        <span>AZN</span>
+                    </button><button class="sub-form">
+                        <span>Nhân dân tệ</span> <br>
+                        <span>CNY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Argentina</span> <br>
+                        <span>ARS</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Chile</span> <br>
+                        <span>CLP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Colombia</span> <br>
+                        <span>COP</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Peso Mexico</span> <br>
+                        <span>MXN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rand Nam Phi</span> <br>
+                        <span>ZAR</span>
+                    </button><button class="sub-form">
+                        <span>Real Brazil</span> <br>
+                        <span>BRL</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rial Oman</span> <br>
+                        <span>OMR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Ringgit Malaysia</span> <br>
+                        <span>MYR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Riyal Qatar</span> <br>
+                        <span>QAR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Riyal Ả Rập Xê Út</span> <br>
+                        <span>SAR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rupee Ấn Độ</span> <br>
+                        <span>INR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rupiah</span> <br>
+                        <span>IDR</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Rúp Nga</span> <br>
+                        <span>RUB</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Sheqel Israel mới</span> <br>
+                        <span>ILS</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Tenge Kazakhstan</span> <br>
+                        <span>KZT</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Won Hàn Quốc</span> <br>
+                        <span>KRW</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Yên Nhật</span> <br>
+                        <span>JPY</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Zloty Ba Lan</span> <br>
+                        <span>PLN</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Canada</span> <br>
+                        <span>CAD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Fiji</span> <br>
+                        <span>FJD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Hong Kong</span> <br>
+                        <span>HKD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Mỹ</span> <br>
+                        <span>USD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Namibia</span> <br>
+                        <span>NAD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la New Zealand</span> <br>
+                        <span>NZD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Singapore</span> <br>
+                        <span>SGD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Úc</span> <br>
+                        <span>AUD</span>
+                    </button>
+                    <button class="sub-form">
+                        <span>Đô la Đài Loan mới</span> <br>
+                        <span>TWD</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <div id="change_language-content" class="change_currency-wrapper">
+            <div class="form">
+                <h3>Chọn ngôn ngữ của bạn</h3>
+                <i class="fa-solid fa-x" onclick="close_table()"></i>
+                <h4>Được đề xuất cho bạn</h4>
+                <div class="language-wrapper">
+                    <button class="sub-form">
+                        <img src="img/Gb@3x.png" alt="">
+                        <span>English (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Us@3x.png" alt="">
+                        <span>English (US)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Kr@3x.png" alt="">
+                        <span>한국어</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fr@3x.png" alt="">
+                        <span>Français</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/De@3x.png" alt="">
+                        <span>Deutsch</span>
+                    </button>
+                </div>
+                <h4>Tất cả ngôn ngữ</h4>
+                <div class="flex_container">
+                    <button class="sub-form">
+                        <img src="img/Gb@3x.png" alt="">
+                        <span class="">English (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Us@3x.png" alt="">
+                        <span>English (US)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/De@3x.png" alt="">
+                        <span>Deutsch</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/No@3x.png" alt="">
+                        <span>Nederlands  (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fr@3x.png" alt="">
+                        <span>Français  (UK)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Es@3x.png" alt="">
+                        <span>Español</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Ar@3x.png" alt="">
+                        <span>Español (AR)   (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Mx@3x.png" alt="">
+                        <span>Español (MX)  (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Catalonia@3x.png" alt="">
+                        <span>Català  (UK)</span>
+                    </button> 
+                    <button class="sub-form">
+                        <img src="img/Lt@3x.png" alt="">
+                        <span>Italiano</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Pt@3x.png" alt="">
+                        <span>Português (PT) </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Br@3x.png" alt="">
+                        <span>Português (BR)</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/No@3x.png" alt="">
+                        <span>Norsk </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Fi@3x.png" alt="">
+                        <span>Suomi </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Se@3x.png" alt="">
+                        <span>Svenska </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Dk@3x.png" alt="">
+                        <span>Dansk </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ro@3x.png" alt="">
+                        <span>Čeština </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Hu@3x.png" alt="">
+                        <span>Magyar  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ro@3x.png" alt="">
+                        <span>Română</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Jp@3x.png" alt="">
+                        <span>日本語</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Cn@3x.png" alt="">
+                        <span>简体中文</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Cz@3x.png" alt="">
+                        <span>Čeština</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Z4@3x.png" alt="">
+                        <span>繁體中文</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Pl@3x.png" alt="">
+                        <span>Polski</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Gr@3x.png" alt="">
+                        <span>Ελληνικά  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ru@3x.png" alt="">
+                        <span>Русский  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Tr@3x.png" alt="">
+                        <span>Türkçe  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Bg@3x.png" alt="">
+                        <span>Български  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Sa@3x.png" alt="">
+                        <span>العربية  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Kr@3x.png" alt="">
+                        <span>한국어</span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Bg@3x.png" alt="">
+                        <span>עברית </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Lv@3x.png" alt="">
+                        <span>Latviski </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ua@3x.png" alt="">
+                        <span>Українська </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/In@3x.png" alt="">
+                        <span>हिन्दी </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Id@3x.png" alt="">
+                        <span>Bahasa Indonesia  </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Es@3x.png" alt="">
+                        <span>Bahasa Malaysia </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Th@3x.png" alt="">
+                        <span>ภาษาไทย </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Ee@3x.png" alt="">
+                        <span>Eesti </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Hr@3x.png" alt="">
+                        <span>Hrvatski </span>
+                    </button>
+                    <button class="sub-form">
+                        <img src="img/Lt@3x.png" alt="">
+                        <span>Lietuvių  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Sk@3x.png" alt="">
+                        <span>Slovenčina  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Hr@3x.png" alt="">
+                        <span>Srpski  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Vn@3x.png" alt="">
+                        <span>Tiếng Việt   </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Ph@3x.png" alt="">
+                        <span>Filipino  </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Is@3x.png" alt="">
+                        <span>Íslenska </span>
+                    </button>
+
+                    <button class="sub-form">
+                        <img src="img/Si@3x.png" alt="">
+                        <span>Hrvatski </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/booking.js"></script>
+</body>
+</html>

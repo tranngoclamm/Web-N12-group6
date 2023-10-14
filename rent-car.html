@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/rent-car.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+</head>
+<body>
+    <div class="header">
+        <ul class="flex-container">
+            <li><a href="booking.html" class="title styled_text">Booking.com</a></li>
+            <li><button class="styled_text choose_currency">VND</button></li>
+            <li><button class="icon_flag-vn" ><img class="icon_flag-vn" src="img/flag-vn.png" alt=""></button></li>
+            <li class=""><button class="wrapper_hover icon-question styled_text ">?</button></li>
+            <li><a href="" class="styled_text join-booking wrapper_hover">Quản lý đơn đặt</a></li>
+            <li><a href="" class="styled_button">Đăng ký</a></li>
+            <li><a href="" class="styled_button">Đăng nhập</a></li>
+        </ul>
+        <div class="flex-container">
+            <div class="wrapper-hover flex-container">
+                <a href="booking.html"><img class="resize-form" src="img/bed-title.png" alt=""></a>
+                <a href="booking.html" class="styled_text">Lưu trú</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_flight.html"><img class="resize-form" src="img/airplane.jpg" alt=""></a>
+                <a href="booking_flight.html" class="styled_text">Chuyến bay</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="booking_and_hotel.html"><img class="resize-form" src="img/2023-09-04_182311.jpg" alt=""></a>
+                <a href="booking_and_hotel.html" class="styled_text">Chuyến bay + Khách sạn</a>
+            </div>
+            <div class="wrapper-hover flex-container white-border">
+                <a href="rent-car.html"><img class="resize-form" src="img/rent_car-title.png" alt=""></a>
+                <a href="rent-car.html" class="styled_text">Thuê xe</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="vist_location.html"><img class="resize-form" src="img/location.jpg" alt=""></a>
+                <a href="vist_location.html" class="styled_text">Địa điểm tham quan</a>
+            </div>
+            <div class="wrapper-hover flex-container">
+                <a href="Airport_taxi.html"><img class="resize-form" src="img/taxi.jpg" alt=""></a>
+                <a href="Airport_taxi.html" class="styled_text">Taxi sân bay</a>
+            </div>
+        </div>
+        <p class="big_text-size">Thuê ô tô cho bất cứ chuyến đi nào</p>
+        <p class="medium_text-size">Ưu đãi tốt, giá hấp dẫn từ các công ty cho thuê xe lớn nhất</p>
+    </div>
+
+    <div class="container">
+        <div class="search_wrapper flex-container">
+            <div class="search_form flex-container">
+                <input type="text" name="" id="local_to" placeholder="Địa điểm nhận xe" class="styled_text txt_text">
+            </div>
+            <div class="search_form flex-container">
+                <button class="styled_button"><img src="img/date-img.png" alt="" class="resize-form"></button>
+                <button class="styled_text">
+                    <p>Ngày nhận xe</p>
+                    <label for="" id="date_to">Th 4, 11 thg 10</label>
+                    <input type="date" name="" id="choose_date_to">
+                </button>
+            </div>
+            <div class="search_form flex-container small-form">
+                <button class="styled_button"><img src="img/clock.png" alt="" class="resize-form"></button>
+                <button class="styled_text" >
+                    <p>Thời gian</p>
+                    <label for="" id="time_to">10: 10</label>
+                    <select id="time_select_to">
+                        <option value="00:00">00:00</option>
+                        <option value="00:30">00:30</option>
+                        <option value="01:00">01:00</option>
+                        <option value="01:30">01:30</option>
+                        <option value="02:00">02:00</option>
+                        <option value="02:30">02:30</option>
+                        <option value="03:00">03:00</option>
+                        <option value="03:30">03:30</option>
+                        <option value="04:00">04:00</option>
+                        <option value="04:30">04:30</option>
+                        <option value="05:00">05:00</option>
+                        <option value="05:30">05:30</option>
+                        <option value="06:00">06:00</option>
+                        <option value="06:30">06:30</option>
+                        <option value="07:00">07:00</option>
+                        <option value="07:30">07:30</option>
+                        <option value="08:00">08:00</option>
+                        <option value="08:30">08:30</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30">19:30</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
+                        <option value="22:00">22:00</option>
+                        <option value="22:30">22:30</option>
+                        <option value="23:00">23:00</option>
+                        <option value="23:30">23:30</option>
+                    </select>
+                </button>
+            </div>
+            <div class="search_form flex-container">
+                <button class="styled_button"><img src="img/date-img.png" alt="" class="resize-form"></button>
+                <button class="styled_text">
+                    <p>Ngày trả xe</p>
+                    <label for="" id="date_from">Th 7, 11 thg 10</label>
+                    <input type="date" name="" id="choose_date_from">
+                </button>
+            </div>
+            <div class="search_form flex-container small-form">
+                <button class="styled_button"><img src="img/clock.png" alt="" class="resize-form"></button>
+                <button class="styled_text">
+                    <p>Thời gian</p>
+                    <label for="" id="time_from">10:10</label>
+                    <select id="time_select_from">
+                        <option value="00:00">00:00</option>
+                        <option value="00:30">00:30</option>
+                        <option value="01:00">01:00</option>
+                        <option value="01:30">01:30</option>
+                        <option value="02:00">02:00</option>
+                        <option value="02:30">02:30</option>
+                        <option value="03:00">03:00</option>
+                        <option value="03:30">03:30</option>
+                        <option value="04:00">04:00</option>
+                        <option value="04:30">04:30</option>
+                        <option value="05:00">05:00</option>
+                        <option value="05:30">05:30</option>
+                        <option value="06:00">06:00</option>
+                        <option value="06:30">06:30</option>
+                        <option value="07:00">07:00</option>
+                        <option value="07:30">07:30</option>
+                        <option value="08:00">08:00</option>
+                        <option value="08:30">08:30</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30">19:30</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
+                        <option value="22:00">22:00</option>
+                        <option value="22:30">22:30</option>
+                        <option value="23:00">23:00</option>
+                        <option value="23:30">23:30</option>
+                    </select>
+                </button>
+            </div>
+            <button id="find" class="color-button" onclick="find_local()">Tìm kiếm</button>
+        </div>
+        <div class="checkbox-form">
+            <div class="sub-form">
+                <input type="checkbox" name="" id="" class="big-size">
+                <a href="" class="txt_checkbox">Trả xe tại địa điểm khác</a>
+            </div>
+            <div class="sub-form">
+                <input type="checkbox" name="" id="" class="big-size">
+                <a href="" class="txt_checkbox">Người lái xe tuổi từ 30 - 65?</a>
+            </div>
+        </div>
+        <div class="sub-content">
+            <div class="sub-block">
+                <img src="img/sp-person.png" alt="">
+                <div>
+                    <h5>Chúng tôi sẵn sàng hỗ trợ bạn</h5>
+                    <p>Hỗ trợ khách hàng bằng hơn 30 ngôn ngữ</p>
+                </div>
+            </div>
+            <div class="sub-block">
+                <img src="img/big-calender.png" alt="">
+                <div>
+                    <h5>Miễn phí hủy xe</h5>
+                    <p>Đối với hầu hết các đặt xe, đến 48 giờ trước thời điểm nhận xe</p>
+                </div>
+            </div>
+            <div class="sub-block">
+                <img src="img/big-vote.png" alt="">
+                <div>
+                    <h5>Hơn 5 triệu đánh giá</h5>
+                    <p>Bởi khách thật đã được xác minh</p>
+                </div>
+            </div>
+        </div>
+        <div class="popular-questions">
+            <h2>Các câu hỏi thường gặp</h2>
+            <div class="list-question">
+                <div class="left-block">
+                    <div class="question">
+                        <span class="question-text">
+                            Tại sao tôi nên đặt thuê xe ở Việt Nam với Booking.com?
+                            <i class="fa-solid fa-angle-right"></i></span>
+                        <ul class="answer">
+                            <p>Chúng tôi tạo điều kiện dễ dàng để bạn tìm xe thuê phù hợp với nhu cầu của mình. Sau đây là những gì chúng tôi mang lại:</p>
+                            <li>Bộ sưu tập xe khổng lồ – từ xe hạng nhỏ đến SUV</li>
+                            <li>Hỗ trợ hơn 30 ngôn ngữ</li>
+                            <li>Miễn phí hủy đến 48 giờ trước khi nhận xe cho hầu hết các đơn đặt.</li>
+                        </ul>
+                    </div>
+                    <div class="question">
+                        <span class="question-text">
+                            Tôi cần chuẩn bị gì để thuê một chiếc xe?
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                        <ul class="answer">
+                            <p>Để đăng ký thuê xe, bạn chỉ cần thẻ tín dụng hoặc ghi nợ.</p>
+                            <p>Khi tại quầy cho thuê, bạn sẽ cần:</p>
+                            <li>Hộ chiếu</li>
+                            <li>Voucher</li>
+                            <li>Bằng lái xe của từng người lái xe</li>
+                            <li>Thẻ tín dụng của người lái xe chính (một số công ty cho thuê cũng chấp nhận thẻ ghi nợ, nhưng hầu hết sẽ không).</li>
+                            <p>Quan trọng: Hãy bảo đảm bạn cũng kiểm tra các điều khoản thuê xe, vì mỗi công ty cho thuê xe sẽ có những điều lệ riêng. Ví dụ: Họ có thể cần xem giấy tờ tùy thân bổ sung. Họ có thể không chấp nhận một số loại thẻ tín dụng nhất định. Hoặc họ có thể không cho thuê nếu người lái có bằng lái chưa đủ 36 tháng.</p>
+                        </ul>
+                    </div>
+                    <div class="question">
+                        <span class="question-text">
+                            Tôi có đủ tuổi để thuê xe?
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                        <ul class="answer">
+                            <p>Hầu hết các công ty sẽ cho bạn thuê xe nếu bạn từ 21 tuổi trở lên (và một số sẽ cho người lái nhỏ tuổi hơn thuê). Nhưng nếu bạn dưới 25 tuổi, bạn vẫn có thể phải trả "phụ phí tài xế trẻ".</p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div class="question">
+                        <span class="question-text">
+                            Tôi có thể đặt xe cho bạn đời, bạn bè, đồng nghiệp, v.v. của mình <br> không?
+                            <i class="fa-solid fa-angle-right"></i></span>
+                        <ul class="answer">
+                            <p>Dĩ nhiên. Chỉ cần điền các thông tin về họ trong biểu mẫu "Chi tiết tài xế" khi bạn đặt xe.</p>
+                        </ul>
+                    </div>
+                    <div class="question">
+                        <span class="question-text">
+                            Tôi cần chuẩn bị gì để thuê một chiếc xe?
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                        <ul class="answer">
+                            <p></p>
+                            <li>Xem xét về nơi bạn sắp đi. Xe SUV có thể là lựa chọn tuyệt vời khi chạy bon bon trên đường cao tốc ở Texas, nhưng xe nhỏ hơn có thể sẽ là lựa chọn hợp lý hơn khi lái ở Rome.</li>
+                            <li>Xem người khác nói gì. Bạn sẽ tìm thấy rất nhiều đánh giá và điểm đánh giá trên trang web chúng tôi. Vì thế hãy tìm hiểu xem những khách hàng khác thích (và không thích) gì về từng công ty cho thuê.</li>
+                            <li>Đừng quên xem xét hộp số. Trong một số quốc gia, hầu như ai cũng lái xe số sàn. Ở các nước khác, xe số tự động lại là tiêu chuẩn. Hãy chắc chắn bạn sẽ thuê chiếc xe bạn có thể lái!</li>
+                        </ul>
+                    </div>
+                    <div class="question">
+                        <span class="question-text">
+                            Tôi cần xem xét những gì khi lựa chọn một chiếc xe?
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                        <ul class="answer">
+                            <p>Giá bạn thấy bao gồm xe, bảo hiểm bắt buộc (ví dụ: Bảo hiểm chống trộm cắp, Bảo hiểm hư hại do va chạm) và các loại phí, nếu có, thường được thanh toán khi nhận xe (ví dụ: phí một chiều, phụ phí sân bay hoặc thuế địa phương).</p>
+                            <p>Giá cũng bao gồm bất kỳ dịch vụ bổ sung nào bạn đã thêm (ví dụ: thiết bị GPS hoặc ghế trẻ em).</p>
+                            <p>Giá không bao gồm bất kỳ bảo hiểm bổ sung nào bạn mua khi đến quầy cho thuê.</p>
+                            <p>Mách nhỏ: Có chi tiết giá đầy đủ ở trang Thanh toán.</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="register-recommend">
+            <h2>Tiết kiệm thời gian và tiền bạc!</h2> <br>
+            <p class="styled_text">Hãy đăng ký và chúng tôi sẽ gửi những ưu đãi tốt nhất cho bạn</p> <br>
+            <div class="sub-form">
+                <input type="text" name="" id="" placeholder="Địa chỉ e-mail của bạn" class="resize-form">
+                <button class="styled_button">Đăng ký</button>
+            </div>
+        </div>
+        <div class="submit-accommodation">
+            <button class="styled_button">Đăng chỗ nghỉ của Quý vị</button>
+        </div>
+        <ul class="footer_title">
+            <li><a href="">Phiên bản di động</a></li>
+            <li><a href="">Tài khoản của bạn</a></li>
+            <li><a href="">Thay đổi đặt phòng của bạn trực tuyến</a></li>
+            <li><a href="">Dịch vụ khách hàng</a></li>
+            <li><a href="">Trở thành đối tác phân phối</a></li>
+            <li><a href="">Booking.com dành cho Doanh nghiệp</a></li>
+        </ul>
+        <div class="others">
+            <div class="block">
+                <a href="">Các quốc gia</a>
+                <br> 
+                <a href="">Khu vực</a> 
+                <br> 
+                <a href="">Thành phố</a> 
+                <br> 
+                <a href="">Quận</a> 
+                <br> 
+                <a href="">Sân bay</a>
+                <br> 
+                <a href="">Khách sạn</a>
+                <br> 
+                <a href="">Địa điểm được quan tâm</a>
+            </div>
+            <div class="block">
+                <a href="">Nhà</a>
+                <br> 
+                <a href="">Căn hộ</a>
+                <br> 
+                <a href="">Resort</a>
+                <br> 
+                <a href="">Biệt thự</a>
+                <br> 
+                <a href="">Nhà trọ</a>
+                <br> 
+                <a href="">Nhà nghỉ B&B</a>
+                <br> 
+                <a href="">Nhà khách</a>
+            </div>
+            <div class="block">
+                <a href="">Những chỗ nghỉ độc đáo</a>
+                <br> 
+                <a href="">Tất cả các điểm đến</a>
+                <br> 
+                <a href="">Tất cả các điểm đến có chuyến bay</a>
+                <br> 
+                <a href="">Tất cả địa điểm cho thuê xe</a>
+                <br> 
+                <a href="">Khám phá</a>
+                <br> 
+                <a href="">Đánh giá của khách</a>
+                <br> 
+                <a href="">Khám phá lưu trú theo tháng</a>
+                <br> 
+                <a href="">Các bài viết</a>
+                <br> 
+                <a href="">Ưu đãi theo mùa và dịp lễ</a>
+                <br> 
+                <a href="">Traveller Review Awards</a>
+            </div>
+            <div class="block">
+                <a href="">Cho thuê xe hơi</a>
+                <br> 
+                <a href="">Tìm chuyến bay</a>
+                <br> 
+                <a href="">Đặt nhà hàng</a>
+                <br> 
+                <a href="">Booking.com dành cho Đại Lý Du Lịch</a>
+            </div>
+            <div class="block">
+                <a href="">Các câu hỏi thường gặp về virus corona (COVID-19)</a>
+                <br> 
+                <a href="">Về Booking.com</a>
+                <br> 
+                <a href="">Dịch vụ khách hàng</a>
+                <br> 
+                <a href="">Trợ giúp đối tác</a>
+                <br> 
+                <a href="">Careers</a>
+                <br> 
+                <a href="">Du lịch bền vững</a>
+                <br> 
+                <a href="">Truyền thông</a>
+                <br> 
+                <a href="">Trung tâm thông tin bảo mật</a>
+                <br> 
+                <a href="">Quan hệ cổ đông</a>
+                <br> 
+                <a href="">Điều khoản và điều kiện</a>
+                <br> 
+                <a href="">Tranh chấp đối tác</a>
+                <br> 
+                <a href="">Chúng tôi hoạt động như thế nào</a>
+                <br> 
+                <a href="">Thông báo về Bảo mật & Cookie</a>
+                <br> 
+                <a href="">Chính sách MSA</a>
+                <br> 
+                <a href="">Liên hệ công ty</a>
+                <br> 
+                <a href="">Hướng dẫn nội dung</a>
+            </div>
+        </div>
+        <div class="extranet-login">
+            <a href="">Đăng nhập vào extranet</a>
+        </div>  
+        <div class="copyright_text">
+            <p>Bản quyền © 1996–2023 Booking.com™. Bảo lưu mọi quyền.</p>
+        </div>  
+        <div class="footer_priceline-title">
+            <p>Booking.com là một phần của Booking Holdings Inc., tập đoàn đứng đầu thế giới về du lịch trực tuyến và các dịch vụ liên quan.</p>
+        </div>
+        <div class="footer_priceline-list">
+            <img src="img/booking.png" alt="" title="Booking.com">
+            <img src="img/priceline.png" alt="" title="Priceline">
+            <img src="img/kayak.png" alt="" title="Kayak">
+            <img src="img/agoda.png" alt="" title="Agoda">
+            <img src="img/retalcars.png" alt="" title="Rentalcars">
+            <img src="img/opentable.png" alt="" title="OpenTable">
+        </div>
+    </div>
+    <script src="./js/rent-car.js"></script>
